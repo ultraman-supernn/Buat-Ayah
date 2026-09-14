@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Terima Kasih Ayah ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Cahaya belakang */
+body::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: rgba(59, 130, 246, 0.25);
+    filter: blur(100px);
+    border-radius: 50%;
+    top: -100px;
+    left: -100px;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(168, 85, 247, 0.2);
+    filter: blur(100px);
+    border-radius: 50%;
+    bottom: -100px;
+    right: -100px;
+}
+
+/* Kartu */
+.card {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 450px;
+    padding: 35px 25px;
+    text-align: center;
+
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 25px;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.4);
+
+    animation: muncul 1.5s ease;
+}
+
+/* Icon */
+.icon {
+    font-size: 65px;
+    margin-bottom: 15px;
+    animation: detak 1.5s infinite;
+}
+
+/* Judul */
+h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+
+    background: linear-gradient(
+        90deg,
+        #60a5fa,
+        #c084fc,
+        #f472b6
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Nama */
+.nama {
+    font-size: 22px;
+    color: #fbbf24;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Isi */
+p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #e2e8f0;
+}
+
+/* Quote */
+.quote {
+    margin-top: 20px;
+    padding: 15px;
+
+    border-left: 3px solid #fbbf24;
+
+    background: rgba(255,255,255,0.05);
+
+    font-style: italic;
+    color: #cbd5e1;
+}
+
+/* Tombol */
+button {
+    margin-top: 25px;
+    padding: 13px 25px;
+
+    border: none;
+    border-radius: 50px;
+
+    background: linear-gradient(
+        90deg,
+        #3b82f6,
+        #8b5cf6
+    );
+
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(59,130,246,0.3);
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Pesan rahasia */
+#pesan {
+    display: none;
+    margin-top: 20px;
+
+    color: #fef3c7;
+    font-size: 18px;
+
+    animation: muncul 1s ease;
+}
+
+/* Hati */
+.heart {
+    position: absolute;
+    bottom: -30px;
+
+    font-size: 20px;
+
+    animation: naik linear forwards;
+
+    opacity: 0.8;
+}
+
+/* Animasi kartu */
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Animasi detak */
+@keyframes detak {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+/* Animasi hati */
+@keyframes naik {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Responsif HP */
+@media (max-width: 400px) {
+
+    .card {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="icon">❤️</div>
+
+    <h1>Terima Kasih Ayah</h1>
+
+    <div class="nama">
+        Untuk Ayah Tercinta
+    </div>
+
+    <p>
+        Ayah, terima kasih untuk semua perjuangan,
+        pengorbanan, kasih sayang, dan kerja keras
+        yang Ayah berikan setiap hari.
+    </p>
+
+    <div class="quote">
+        "Mungkin aku tidak selalu mengatakannya,
+        tetapi aku sangat bersyukur memiliki Ayah
+        seperti Ayah."
+    </div>
+
+    <p style="margin-top:20px;">
+        Terima kasih sudah selalu menjadi
+        sosok yang kuat untuk keluarga. ❤️
+    </p>
+
+    <button onclick="tampilkanPesan()">
+        💌 Pesan Untuk Ayah
+    </button>
+
+    <div id="pesan">
+      Ayah aa minta uang yah
+       TF Ke Gopay Biasa Ya😁
+        <br><br>
+        <b>Aa sayang Ayah ❤️</b>
+    </div>
+
+</div>
+
+<script>
+
+/* Tombol pesan */
+function tampilkanPesan() {
+
+    const pesan = document.getElementById("pesan");
+
+    if (pesan.style.display === "block") {
+        pesan.style.display = "none";
+    } else {
+        pesan.style.display = "block";
+    }
+
+}
+
+
+/* Membuat hati terbang */
+function buatHati() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (15 + Math.random() * 25) + "px";
+
+    heart.style.animationDuration =
+        (4 + Math.random() * 5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 9000);
+
+}
+
+
+/* Jalankan hati terus */
+setInterval(buatHati, 500);
+
+</script>
+
+</body>
+</html>
